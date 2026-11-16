@@ -1,4 +1,3 @@
-# Lab Exercise 12: Student Data Manager Using JSON File
 import json
 FILE_NAME = "students.json"
 def load_students():
