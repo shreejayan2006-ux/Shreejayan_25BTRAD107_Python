@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: ledgerly
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn ledgerly:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: LEDGERLY_SECRET
+        generateValue: true
+      - key: LEDGERLY_ADMIN_PW
+        sync: false
+      - key: LEDGERLY_VIEWER_PW
+        sync: false
